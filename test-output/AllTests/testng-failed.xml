@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AllTests]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="User KYC(failed)">
+    <classes>
+      <class name="org.simplilearn.workshop.admin.adminKycTest">
+        <methods>
+          <include name="endTest"/>
+          <include name="login"/>
+          <include name="kycAccept"/>
+        </methods>
+      </class> <!-- org.simplilearn.workshop.admin.adminKycTest -->
+    </classes>
+  </test> <!-- User KYC(failed) -->
+  <test thread-count="5" name="User Portal(failed)">
+    <classes>
+      <class name="org.simplilearn.workshop.user.userDashboardTest">
+        <methods>
+          <include name="transferHistory"/>
+          <include name="withdraw"/>
+          <include name="transfer"/>
+          <include name="editProfile"/>
+          <include name="transactionHistory"/>
+          <include name="login"/>
+          <include name="logout"/>
+          <include name="changePassword"/>
+          <include name="deposit"/>
+          <include name="requestCheckBook"/>
+        </methods>
+      </class> <!-- org.simplilearn.workshop.user.userDashboardTest -->
+    </classes>
+  </test> <!-- User Portal(failed) -->
+  <test thread-count="5" name="Admin Portal(failed)">
+    <classes>
+      <class name="org.simplilearn.workshop.admin.adminDashboardTest">
+        <methods>
+          <include name="login"/>
+          <include name="endTest"/>
+          <include name="chequeBookRequest"/>
+        </methods>
+      </class> <!-- org.simplilearn.workshop.admin.adminDashboardTest -->
+    </classes>
+  </test> <!-- Admin Portal(failed) -->
+</suite> <!-- Failed suite [AllTests] -->
