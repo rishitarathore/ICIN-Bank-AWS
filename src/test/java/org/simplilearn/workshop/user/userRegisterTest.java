@@ -3,11 +3,13 @@ package org.simplilearn.workshop.user;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.simplilearn.workshop.MyScreenRecorder;
 import org.testng.annotations.Test;
 
 public class userRegisterTest {
 	@Test
-	 public void userRegister() {
+	 public void userRegister() throws Exception {
+			MyScreenRecorder.startRecording("userRegister");
 			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
 			
@@ -64,6 +66,7 @@ public class userRegisterTest {
 			driver.findElement(By.id("btn-color")).click();
 			sleep(1000);
 			driver.quit();
+			MyScreenRecorder.stopRecording();
 			
 	 }
 	

@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.simplilearn.workshop.MyScreenRecorder;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -35,7 +36,8 @@ public class userDashboardTest {
 	}
 
 	@Test(priority = 1)
-	public void deposit() {
+	public void deposit() throws Exception {
+		MyScreenRecorder.startRecording("deposit");
 		// deposit
 		sleep(1000);
 		driver.findElement(By.xpath("/html//div[@id='btn-color']/a[@href='/user/deposit']")).click();
@@ -46,10 +48,12 @@ public class userDashboardTest {
 				"/html/body[@class='default-body']//form[@action='/user/depositAction']//input[@value='Deposit']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 2)
-	public void withdraw() {
+	public void withdraw() throws Exception {
+		MyScreenRecorder.startRecording("withdraw");
 		// withdraw
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/user/withdraw']")).click();
@@ -57,10 +61,12 @@ public class userDashboardTest {
 		driver.findElement(By.cssSelector("[type='text']")).sendKeys("100");
 		driver.findElement(By.cssSelector("[type='submit']")).click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 3)
-	public void transfer() {
+	public void transfer() throws Exception {
+		MyScreenRecorder.startRecording("transfer");
 		// transfer
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/user/transferMoney']")).click();
@@ -70,10 +76,12 @@ public class userDashboardTest {
 		driver.findElement(By.name("amount")).sendKeys("100");
 		driver.findElement(By.cssSelector("[type='submit']")).click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 4)
-	public void requestCheckBook() {
+	public void requestChequeBook() throws Exception {
+		MyScreenRecorder.startRecording("requestChequeBook");
 		// Request check Book
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/user/requestChequeBook']")).click();
@@ -84,26 +92,32 @@ public class userDashboardTest {
 				"/html/body[@class='default-body']//form[@action='/user/requestChequeBookAction']//input[@value='Confirm']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 5)
-	public void transactionHistory() {
+	public void transactionHistory() throws Exception {
+		MyScreenRecorder.startRecording("transactionHistory");
 		// Transaction History
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/user/transactionHistory']")).click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 6)
-	public void transferHistory() {
+	public void transferHistory() throws Exception {
+		MyScreenRecorder.startRecording("transferHistory");
 		// Transfer History
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/user/transferHistory']")).click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 7)
-	public void editProfile() {
+	public void editProfile() throws Exception {
+		MyScreenRecorder.startRecording("editProfile");
 		// Edit Profile
 		sleep(1000);
 		driver.findElement(By.xpath("/html//a[@id='navbarDropdown']")).click();
@@ -115,10 +129,12 @@ public class userDashboardTest {
 		driver.findElement(By.name("address")).sendKeys("Raipur, (C.G.)");
 		driver.findElement(By.xpath("/html//input[@id='btn-color']")).click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 8)
-	public void changePassword() {
+	public void changePassword() throws Exception {
+		MyScreenRecorder.startRecording("changePassword");
 		// Change Password
 		sleep(1000);
 		driver.findElement(By.xpath("/html//a[@id='navbarDropdown']")).click();
@@ -129,6 +145,7 @@ public class userDashboardTest {
 		driver.findElement(By.name("password2")).sendKeys("rish");
 		driver.findElement(By.xpath("/html//input[@id='btn-color']")).click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@AfterMethod

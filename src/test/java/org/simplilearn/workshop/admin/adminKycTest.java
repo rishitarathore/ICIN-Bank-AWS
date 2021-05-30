@@ -3,6 +3,7 @@ package org.simplilearn.workshop.admin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.simplilearn.workshop.MyScreenRecorder;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,7 +33,8 @@ public class adminKycTest {
 	}
 	
 	@Test(priority = 1)
-	public void kycAccept() {
+	public void kycAccept() throws Exception {
+		MyScreenRecorder.startRecording("kycAccept");
 		// KYC accept
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/admin/authorize']")).click();
@@ -45,10 +47,12 @@ public class adminKycTest {
 				"/html/body[@class='default-body']//table[@class='table']//a[@href='/admin/authorizationAccept?username=priya']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 2)
-	public void kycReject() {
+	public void kycReject() throws Exception {
+		MyScreenRecorder.startRecording("kycReject");
 		// KYC reject
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/admin/authorize']")).click();
@@ -57,6 +61,7 @@ public class adminKycTest {
 				"/html/body[@class='default-body']//table[@class='table']//a[@href='/admin/authorizationReject?username=riya']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	

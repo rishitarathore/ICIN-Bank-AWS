@@ -3,11 +3,13 @@ package org.simplilearn.workshop.admin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.simplilearn.workshop.MyScreenRecorder;
 import org.testng.annotations.Test;
 
 public class adminRegisterTest {
 	 @Test
-	 public void adminRegister() {
+	 public void adminRegister() throws Exception {
+		 	MyScreenRecorder.startRecording("adminRegister");
 			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
 			
@@ -23,6 +25,7 @@ public class adminRegisterTest {
 			sleep(1000);
 			
 			driver.quit();
+			MyScreenRecorder.stopRecording();
 	 }
 	
 	

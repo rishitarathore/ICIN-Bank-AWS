@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.simplilearn.workshop.user.userRegisterTest">
+      <class name="org.simplilearn.workshop.admin.adminRegisterTest">
         <methods>
-          <include name="userRegister"/>
+          <include name="adminRegister"/>
         </methods>
-      </class> <!-- org.simplilearn.workshop.user.userRegisterTest -->
+      </class> <!-- org.simplilearn.workshop.admin.adminRegisterTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

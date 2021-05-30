@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.simplilearn.workshop.MyScreenRecorder;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -34,7 +35,8 @@ public class adminDashboardTest {
 	}
 
 	@Test(priority = 1)
-	public void selectFeature() {
+	public void selectFeature() throws Exception {
+		MyScreenRecorder.startRecording("selectFeature");
 		// User Account Info - Select Feature
 		sleep(1000);
 		driver.findElement(By.xpath("/html//div[@id='btn-color']/a[@href='/admin/userAccountInfo']")).click();
@@ -46,10 +48,12 @@ public class adminDashboardTest {
 				"/html/body[@class='default-body']//table[@class='table']/tbody[2]/tr[1]/td[6]/form[@action='/admin/grantAccess']/a[@href='javascript:{}']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 2)
-	public void userBlock() {
+	public void userBlock() throws Exception {
+		MyScreenRecorder.startRecording("userBlock");
 		// User Account Info - Block
 		sleep(1000);
 		driver.findElement(By.xpath("/html//div[@id='btn-color']/a[@href='/admin/userAccountInfo']")).click();
@@ -58,10 +62,12 @@ public class adminDashboardTest {
 				"/html/body[@class='default-body']//table[@class='table']//a[@href='/admin/blockUser?username=rishita']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 3)
-	public void userActivate() {
+	public void userActivate() throws Exception {
+		MyScreenRecorder.startRecording("userActivate");
 		// User Account Info - Activate
 		sleep(1000);
 		driver.findElement(By.xpath("/html//div[@id='btn-color']/a[@href='/admin/userAccountInfo']")).click();
@@ -70,10 +76,12 @@ public class adminDashboardTest {
 				"/html/body[@class='default-body']//table[@class='table']//a[@href='/admin/activateUser?username=rishita']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority = 4)
-	public void chequeBookRequest() {
+	public void chequeBookRequest() throws Exception {
+		MyScreenRecorder.startRecording("chequeBookRequest");
 		// Cheque Book Request
 		sleep(1000);
 		driver.findElement(By.xpath("//div[@id='custom-anchor']//a[@href='/admin/authorizeChequeBook']")).click();
@@ -82,6 +90,7 @@ public class adminDashboardTest {
 				"/html/body[@class='default-body']//table[@class='table']//a[@href='/admin/authorizeChequeBookAction?requestId=1']"))
 				.click();
 		sleep(2000);
+		MyScreenRecorder.stopRecording();
 	}
 
 	@AfterMethod
